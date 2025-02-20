@@ -1,14 +1,13 @@
-import {freq, midiPitch, linear, dBFS} from "./MusicTools.js";
+import { musicTools } from "./MusicTools.js";
 
-let midiInput = document.getElementById("midiToFreq");
-let freqInput = document.getElementById("freqToMidi");
-let dBFSInput = document.getElementById("dbfsToLinear");
-let linearInput = document.getElementById("linearToDbfs");
+//Define HTML Conversion Button
+let midiButton = document.getElementById("midiToFreq");
+let freqButton = document.getElementById("freqToMidi");
+let dBFSButton = document.getElementById("dbfsToLinear");
+let linAmpButton = document.getElementById("linearToDbfs");
 
-
-freqInput.addEventListener("click", freq);
-midiInput.addEventListener("click", midiPitch);
-dBFSInput.addEventListener("click", linear);
-linearInput.addEventListener("click", dBFS);
-
-console.log(midiInput)
+//Set actions (referring to functions in musicTools.js) to happen when buttons are clicked
+midiButton.addEventListener("click", musicTools.midiPitchToFrequency);
+freqButton.addEventListener("click", musicTools.frequencyToMidiPitch);
+dBFSButton.addEventListener("click", musicTools.dbfsToLinearAmplitude);
+linAmpButton.addEventListener("click", musicTools.linearAmpTodBFS);
